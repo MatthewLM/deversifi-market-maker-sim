@@ -44,7 +44,7 @@ module.exports = class DvfTraderSim extends EventEmitter {
 
         const ordersToPrices = (orders) => orders.map(order => order.price);
         const maxBuyPrice = Math.max(...ordersToPrices(orderbook.buy));
-        const minSellPrice = Math.max(...ordersToPrices(orderbook.sell));
+        const minSellPrice = Math.min(...ordersToPrices(orderbook.sell));
 
         const removeFilled = (from, pricePredicate, isBuy) => {
 
